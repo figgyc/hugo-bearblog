@@ -9,6 +9,7 @@
   <ul class="blog-posts">
     {{ range .Pages }}
     <li>
+      {{ if .Data.Singular == "blog" }}
       <span>
         <i>
           <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
@@ -17,6 +18,9 @@
         </i>
       </span>
       <a href="{{ .Permalink }}">{{ .Title }}</a>
+      {{ else }}
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+
     </li>
     {{ else }}
     <li>
