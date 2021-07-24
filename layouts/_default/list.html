@@ -6,6 +6,9 @@
     <a href="{{ "/blog" | relURL }}">Remove filter</a>
   </small>
   {{ end }}
+  <content>
+    {{ .Content }}
+  </content>
   <ul class="blog-posts">
     {{ range .Pages }}
     <li>
